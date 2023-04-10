@@ -1,6 +1,7 @@
 import err from "../errors/index.js";
 
 import { Response, Request } from "express";
+import { Books } from "../protocols/books.js";
 
 export function validateSchema(schema) {
   return (req: Request, res: Response, next) => {

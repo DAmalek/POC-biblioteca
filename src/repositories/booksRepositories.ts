@@ -9,11 +9,13 @@ async function insertBook({ titulo, autor, descricao }: Books) {
 }
 
 async function findByTitle(titulo: string) {
-  await connection.query(`SELECT * FROM livros WHERE titulo=$1`, [titulo]);
+  return await connection.query(`SELECT * FROM livros WHERE titulo=$1`, [
+    titulo,
+  ]);
 }
 
 async function listAll() {
-  await connection.query(`SELECT * FROM livros;`);
+  return await connection.query(`SELECT * FROM livros;`);
 }
 
 async function destroyBook(id: number | string) {
