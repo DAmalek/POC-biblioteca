@@ -18,8 +18,8 @@ async function listAll() {
   return await connection.query(`SELECT * FROM livros;`);
 }
 
-async function destroyBook(id: number | string) {
-  await connection.query(`DELETE FROM livros WHERE id = $1;`, [id]);
+async function destroyBook(titulo: string) {
+  await connection.query(`DELETE FROM livros WHERE titulo = $1;`, [titulo]);
 }
 
 export default { insertBook, findByTitle, listAll, destroyBook };
